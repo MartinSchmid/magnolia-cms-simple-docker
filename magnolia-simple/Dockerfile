@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:stretch
 
 MAINTAINER Martin Schmid "https://github.com/MartinSchmid"
 
