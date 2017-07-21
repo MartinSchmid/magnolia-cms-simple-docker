@@ -1,6 +1,6 @@
 FROM debian:stretch
 
-MAINTAINER Martin Schmid "https://github.com/MartinSchmid"
+MAINTAINER Martin Schmid "https://github.com/martinschmid"
 
 ENV MYSQL_JDBC_PACKAGE mysql-connector-java-5.1.36
 ENV POSTGRESQL_JDBC_PACKAGE postgresql-9.4-1201.jdbc41
