@@ -1,1 +1,1 @@
-docker build  -t nicolasbarbe/magnolia-base-debug .
+docker build  -t MartinSchmid/magnolia-cms-simple-docker .

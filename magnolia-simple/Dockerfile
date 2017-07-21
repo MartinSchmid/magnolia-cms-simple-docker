@@ -1,13 +1,16 @@
-FROM nicolasbarbe/magnolia-base
+FROM debian:jessie
 
-MAINTAINER Nicolas Barbé "https://github.com/nicolasbarbe"
+MAINTAINER Martin Schmid "https://github.com/MartinSchmid"
+
+ENV MYSQL_JDBC_PACKAGE mysql-connector-java-5.1.36
+ENV POSTGRESQL_JDBC_PACKAGE postgresql-9.4-1201.jdbc41
+ENV DEBIAN_FRONTEND noninteractive
 
 # ENV DCEVM_VERSION dcevm-light-jdk7u71-2
-RUN echo "deb http://ftp.de.debian.org/debian wheezy-backports main " >> /etc/apt/sources.list 
+#RUN echo "deb http://ftp.de.debian.org/debian wheezy-backports main " >> /etc/apt/sources.list 
 
 # Install DCEVM
-RUN apt-get  update && apt-get install -y --no-install-recommends  \
-	openjdk-7-jre-dcevm 
+RUN apt-get  update && sudo apt-get install openjdk-8-jre icedtea-8-plugin -y --no-install-recommends 
 	# maven
 
 # Setup maven for Magnolia
@@ -26,6 +29,6 @@ RUN chmod +x $CATALINA_BASE/bin/start-debug.sh
 # COPY aardwark/aardwark.war $CATALINA_BASE/webapps/aardwark.war
 
 # Exposes JMX and JPDA port for debugging from an IDE
-EXPOSE 1043 1099
+#EXPOSE 1043 1099
 
 ENTRYPOINT ["/var/lib/tomcat7/bin/start-debug.sh"]
