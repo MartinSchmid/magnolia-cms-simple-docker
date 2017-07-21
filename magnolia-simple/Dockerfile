@@ -10,7 +10,7 @@ ENV DEBIAN_FRONTEND noninteractive
 #RUN echo "deb http://ftp.de.debian.org/debian wheezy-backports main " >> /etc/apt/sources.list 
 
 # Install DCEVM
-RUN apt-get  update && sudo apt-get install openjdk-8-jre icedtea-8-plugin -y --no-install-recommends 
+RUN apt-get  update && apt-get install openjdk-8-jre icedtea-8-plugin -y --no-install-recommends 
 	# maven
 
 # Setup maven for Magnolia
