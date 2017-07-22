@@ -10,7 +10,8 @@ ENV DEBIAN_FRONTEND noninteractive
 #RUN echo "deb http://ftp.de.debian.org/debian wheezy-backports main " >> /etc/apt/sources.list 
 
 # Install DCEVM
-RUN apt-get  update && sudo apt-get install openjdk-8-jre icedtea-8-plugin -y --no-install-recommends 
+RUN apt-get  update && apt-get install openjdk-8-jre icedtea-8-plugin -y --no-install-recommends
+RUN apt-get install unzip wget tomcat8 libservlet3.1-java -y
 	# maven
 
 # Setup maven for Magnolia
@@ -31,4 +32,4 @@ RUN chmod +x $CATALINA_BASE/bin/start-debug.sh
 # Exposes JMX and JPDA port for debugging from an IDE
 #EXPOSE 1043 1099
 
-ENTRYPOINT ["/var/lib/tomcat7/bin/start-debug.sh"]
+#ENTRYPOINT ["/var/lib/tomcat8/bin/start-debug.sh"]
