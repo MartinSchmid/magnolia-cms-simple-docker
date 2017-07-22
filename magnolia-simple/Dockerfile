@@ -12,7 +12,6 @@ ENV DEBIAN_FRONTEND noninteractive
 # Install DCEVM
 RUN apt-get  update && apt-get install openjdk-8-jre icedtea-8-plugin -y --no-install-recommends
 RUN apt-get install unzip wget tomcat8 libservlet3.1-java -y
-	# maven
 
 # Setup maven for Magnolia
 # RUN mvn org.sonatype.plugins:nexus-m2settings-maven-plugin:1.6.5:download -DnexusUrl=https://nexus.magnolia-cms.com -Dusername=anonymous -Dpassword=anonymous -DtemplateId=magnolia-community-public > /dev/null 
