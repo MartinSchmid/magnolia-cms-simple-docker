@@ -1,1 +1,1 @@
-docker build  -t martinschmid/magnolia-cms-simple-docker .
+docker build -t martinschmid/magnolia-cms-simple-docker .
